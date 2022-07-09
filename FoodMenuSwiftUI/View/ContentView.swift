@@ -10,26 +10,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            ScrollView {
+            List {
                 ForEach(foodSet) {food in
                     CardView(food: food)
                 }
                 .listStyle(.inset)
                 .padding(.top, 15)
-                
-                .navigationTitle("Food List")
-                .navigationViewStyle(.automatic)
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ProfileView()) {
-                            Image(systemName: "person")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 25)
-                                .foregroundColor(.black)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.black, lineWidth: 1))
-                        }
+            }
+            
+            .navigationTitle("Food List")
+            .navigationViewStyle(.automatic)
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: ProfileView()) {
+                        Image(systemName: "person")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 25)
+                            .foregroundColor(.black)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.black, lineWidth: 1))
                     }
                 }
             }
